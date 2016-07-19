@@ -1,0 +1,42 @@
+2016-07-19T06:11:31.152518646 4.892245s notice: Recursively removing directory /home/patrick/Programming/vue-todo/rethinkdb_data/tmp
+2016-07-19T06:11:31.172582149 4.912312s notice: Initializing directory /home/patrick/Programming/vue-todo/rethinkdb_data
+2016-07-19T06:11:31.172813070 4.912538s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/patrick/Programming/vue-todo/rethinkdb_data' did not already exist or is empty.)
+2016-07-19T06:11:31.172871352 4.912596s notice: Running rethinkdb 2.3.4~0jessie (GCC 4.9.2)...
+2016-07-19T06:11:31.175050581 4.914778s notice: Running on Linux 3.16.0-4-amd64 x86_64
+2016-07-19T06:11:31.175149244 4.914874s notice: Loading data from directory /home/patrick/Programming/vue-todo/rethinkdb_data
+2016-07-19T06:11:31.503242141 5.242970s info: Automatically using cache size of 550 MB
+2016-07-19T06:11:31.505474056 5.245199s notice: Listening for intracluster connections on port 29015
+2016-07-19T06:11:31.528583322 5.268309s notice: Listening for client driver connections on port 28015
+2016-07-19T06:11:31.528804942 5.268530s notice: Listening for administrative HTTP connections on port 8080
+2016-07-19T06:11:31.528819291 5.268544s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T06:11:31.528823883 5.268548s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T06:11:31.528831882 5.268556s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T06:11:31.528836221 5.268561s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-07-19T06:11:31.528843841 5.268568s notice: Server ready, "debian_oy9" ced94b2e-69eb-439b-9209-3312e327cef3
+2016-07-19T07:12:55.340450074 3689.080175s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: Starting a new Raft election for term 1.
+2016-07-19T07:12:55.355830383 3689.095556s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: Added replica on this server.
+2016-07-19T07:12:55.417847245 3689.157572s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: This server is Raft leader for term 1. Latest log index is 0.
+2016-07-19T07:25:05.538897054 4419.278622s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Starting a new Raft election for term 1.
+2016-07-19T07:25:05.539458432 4419.279183s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Added replica on this server.
+2016-07-19T07:25:05.614253874 4419.353979s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: This server is Raft leader for term 1. Latest log index is 0.
+2016-07-19T07:35:33.344173736 5047.083899s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2016-07-19T07:35:33.344279567 5047.084004s notice: Shutting down client connections...
+2016-07-19T07:35:33.344443904 5047.084169s notice: All client connections closed.
+2016-07-19T07:35:33.344448103 5047.084173s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-07-19T07:35:33.394364529 5047.134090s notice: Storage engine shut down.
+2016-07-19T07:35:41.596808676 6.404372s notice: Running rethinkdb 2.3.4~0jessie (GCC 4.9.2)...
+2016-07-19T07:35:41.611826849 6.419391s notice: Running on Linux 3.16.0-4-amd64 x86_64
+2016-07-19T07:35:41.612020464 6.419583s notice: Loading data from directory /home/patrick/Programming/vue-todo/rethinkdb_data
+2016-07-19T07:35:41.697340985 6.504904s info: Automatically using cache size of 183 MB
+2016-07-19T07:35:41.697762693 6.505324s notice: Listening for intracluster connections on port 29015
+2016-07-19T07:35:41.739798871 6.547361s notice: Listening for client driver connections on port 28015
+2016-07-19T07:35:41.740047963 6.547609s notice: Listening for administrative HTTP connections on port 8080
+2016-07-19T07:35:41.740050502 6.547612s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T07:35:41.740052441 6.547614s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T07:35:41.740061628 6.547623s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-19T07:35:41.740063627 6.547625s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-07-19T07:35:41.740065316 6.547626s notice: Server ready, "debian_oy9" ced94b2e-69eb-439b-9209-3312e327cef3
+2016-07-19T07:35:43.077631176 7.885193s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: Starting a new Raft election for term 2.
+2016-07-19T07:35:43.106878614 7.914440s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Starting a new Raft election for term 2.
+2016-07-19T07:35:43.166315770 7.973877s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: This server is Raft leader for term 2. Latest log index is 2.
+2016-07-19T07:35:43.199908439 8.007470s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: This server is Raft leader for term 2. Latest log index is 2.
