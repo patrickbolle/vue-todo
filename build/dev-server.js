@@ -26,6 +26,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 // compilation error display
 app.use(require('webpack-hot-middleware')(compiler))
 
+//REST API FOR TASKS
+//GET - All Tasks
 router.get('/tasks', (req, res) => {
   r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
     res.send(result)
@@ -34,6 +36,7 @@ router.get('/tasks', (req, res) => {
   })
 })
 
+//POST - Create A New Task
 router.post('/tasks', jsonParser, (req, res) => {
   const task = {
     'title': req.body.title,
@@ -47,6 +50,7 @@ router.post('/tasks', jsonParser, (req, res) => {
   })
 })
 
+//GET - Individual Task
 router.get('/tasks/:id', (req, res) => {
   r.table('tasks').get(req.params.id).run().then(result => {
     res.send(result)
@@ -55,8 +59,17 @@ router.get('/tasks/:id', (req, res) => {
   })
 })
 
-app.use('/api', router)
+//DELETE - Task
+router.delete('/tasks/:id', (req, res) => {
+  console.log(req.params.id)
+  r.table("tasks").get(req.params.id).delete().run(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    }
+  )
+})
 
+app.use('/api', router)
 app.listen(8090, 'localhost', function (err) {
   if (err) {
     console.log(err)

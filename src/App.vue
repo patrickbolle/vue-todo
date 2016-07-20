@@ -20,8 +20,14 @@ export default {
 <style>
 @import "../node_modules/bulma/css/bulma.css";
 
-body {
+html {
   background: url(./assets/congruent_pentagon.png) ;
+}
+
+.container {
+  padding-top: 25px;
+  width: 60%;
+  margin: 0px auto;
 }
 
 </style>

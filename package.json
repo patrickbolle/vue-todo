@@ -5,7 +5,7 @@
   "author": "Patrick Bollenbach <patrickbollenbachcc@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "nodemon build/dev-server.js",
     "build": "node build/build.js",
     "test": ""
   },
@@ -17,6 +17,7 @@
     "picnic": "^6.1.2",
     "rethinkdb": "^2.3.2",
     "rethinkdbdash": "^2.3.17",
+    "socket.io": "^1.4.8",
     "spectre.css": "^0.1.25",
     "vue": "^1.0.21"
   },
@@ -36,6 +37,7 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.12.0",
     "json-loader": "^0.5.4",
+    "nodemon": "^1.9.2",
     "ora": "^0.2.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
