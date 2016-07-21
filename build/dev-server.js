@@ -4,11 +4,13 @@ const bodyParser = require('body-parser')
 const webpack = require('webpack')
 const config = require('./webpack.dev.conf.js')
 const _ = require('lodash')
+const sockio = require("socket.io");
 
 const app = express()
 const router = express.Router()
 const compiler = webpack(config)
 const jsonParser = bodyParser.json()
+
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
@@ -26,13 +28,16 @@ app.use(require('webpack-dev-middleware')(compiler, {
 // compilation error display
 app.use(require('webpack-hot-middleware')(compiler))
 
+var io = sockio.listen(app.listen(8099), {log: false});
+console.log("Server started on port " + 8099);
+
 //REST API FOR TASKS
 //GET - All Tasks
 router.get('/tasks', (req, res) => {
-  r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
-    res.send(result)
-  }).catch(err => {
-    console.log("Error:", err)
+  r.table("tasks").changes().run().then(function(cursor) {
+    cursor.each(function(err, task) {
+      io.sockets.emit("tasksSocket", task);
+    })
   })
 })
 

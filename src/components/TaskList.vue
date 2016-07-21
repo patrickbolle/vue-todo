@@ -1,4 +1,4 @@
-<template lang="html">
+<template lang="html" name="TaskList">
   <div>
     <task-new></task-new>
     <div class="divider"></div>
@@ -20,6 +20,7 @@
 
 <script>
 import TaskNew from './TaskNew'
+var socket = io.connect('http://localhost:8099');
 
 export default {
   components: {
@@ -35,6 +36,10 @@ export default {
   created () {
     this.$http.get('http://localhost:8090/api/tasks').then(response => {
       this.tasks = response.data
+    })
+    var vm = this
+    socket.on('tasksSocket', function (task) {
+      vm.tasks.push(task)
     })
   },
 
