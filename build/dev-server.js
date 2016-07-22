@@ -58,8 +58,8 @@ router.post('/tasks', jsonParser, (req, res) => {
   }
   r.table('tasks').insert(task).run().then(result => {
     res.send(result)
-    console.log(result)
     io.emit('taskInsert', result);
+    console.log(res)
   }).catch(err => {
     console.log('Error:', err)
   })

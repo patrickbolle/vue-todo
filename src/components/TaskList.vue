@@ -35,21 +35,13 @@ export default {
 
   created () {
     this.$http.get('http://localhost:8090/api/tasks').then(response => {
-      this.$set('tasks', response.data)
+       this.$set('tasks', response.data)
     })
   },
 
   ready () {
     var that = this
-    socket.on('taskInsert', function(result){
-      console.log(that)
-      console.log("Task inserted: " + result)
-      that.tasks.push(result)
-    })
-    socket.on('taskDelete', function(result){
-      console.log("Task removed: " + result)
-      that.tasks.$remove(result)
-    })
+    that.socketInsert()
   },
 
   methods: {
@@ -57,7 +49,15 @@ export default {
       this.$http.delete('http://localhost:8090/api/tasks/' + id).then(response => {
         this.$set('tasks', response.data)
       })
+    },
+    socketInsert () {
+      var that = this
+      socket.on('taskInsert', function(result){
+        //console.log(result)
+        that.tasks.push(result)
+      })
     }
+
   }
 }
 </script>
