@@ -31,13 +31,22 @@ app.use(require('webpack-hot-middleware')(compiler))
 var io = sockio.listen(app.listen(8099), {log: false});
 console.log("Server started on port " + 8099);
 
+// Set socket.io listeners.
+io.on('connection', (socket) => {
+  console.log('a user connected');
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
 //REST API FOR TASKS
 //GET - All Tasks
 router.get('/tasks', (req, res) => {
-  r.table("tasks").changes().run().then(function(cursor) {
-    cursor.each(function(err, task) {
-      io.sockets.emit("tasksSocket", task);
-    })
+  r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
+    res.send(result)
+  }).catch(err => {
+    console.log("Error:", err)
   })
 })
 
@@ -50,6 +59,7 @@ router.post('/tasks', jsonParser, (req, res) => {
   r.table('tasks').insert(task).run().then(result => {
     res.send(result)
     console.log(result)
+    io.emit('taskInsert', result);
   }).catch(err => {
     console.log('Error:', err)
   })
@@ -70,6 +80,7 @@ router.delete('/tasks/:id', (req, res) => {
   r.table("tasks").get(req.params.id).delete().run(function(err, result) {
         if (err) throw err;
         console.log(result);
+        io.emit('taskDelete', result);
     }
   )
 })
