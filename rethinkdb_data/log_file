@@ -167,3 +167,31 @@
 2016-07-23T06:09:39.710559430 59.760081s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: This server is Raft leader for term 9. Latest log index is 26.
 2016-07-23T06:09:40.726473741 60.775995s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Starting a new Raft election for term 9.
 2016-07-23T06:09:40.785610103 60.835132s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: This server is Raft leader for term 9. Latest log index is 23.
+2016-07-23T09:02:40.014833024 10440.064355s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2016-07-23T09:02:40.050523055 10440.100045s notice: Shutting down client connections...
+2016-07-23T09:02:40.079764589 10440.129286s notice: All client connections closed.
+2016-07-23T09:02:40.079770237 10440.129291s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-07-23T09:02:40.394315456 10440.443838s notice: Storage engine shut down.
+2016-07-23T09:02:46.536987349 3.657488s notice: Running rethinkdb 2.3.4~0jessie (GCC 4.9.2)...
+2016-07-23T09:02:46.566621458 3.687122s notice: Running on Linux 3.16.0-4-amd64 x86_64
+2016-07-23T09:02:46.566690663 3.687190s notice: Loading data from directory /home/patrick/Programming/vue-todo/rethinkdb_data
+2016-07-23T09:02:46.778227558 3.898729s info: Automatically using cache size of 459 MB
+2016-07-23T09:02:46.779108291 3.899608s notice: Listening for intracluster connections on port 29015
+2016-07-23T09:02:47.047973000 4.168472s notice: Listening for client driver connections on port 28015
+2016-07-23T09:02:47.048070430 4.168569s notice: Listening for administrative HTTP connections on port 8080
+2016-07-23T09:02:47.048073683 4.168573s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-23T09:02:47.048076187 4.168575s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-23T09:02:47.048078591 4.168577s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2016-07-23T09:02:47.048080833 4.168580s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2016-07-23T09:02:47.048083066 4.168582s notice: Server ready, "debian_oy9" ced94b2e-69eb-439b-9209-3312e327cef3
+2016-07-23T09:02:47.976250749 5.096750s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: Starting a new Raft election for term 10.
+2016-07-23T09:02:48.116883803 5.237383s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: This server is Raft leader for term 10. Latest log index is 29.
+2016-07-23T09:02:48.659050802 5.779550s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Starting a new Raft election for term 10.
+2016-07-23T09:02:48.983723386 6.104223s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: This server is Raft leader for term 10. Latest log index is 27.
+2016-07-23T09:36:27.948013895 2025.068513s notice: Removing file /home/patrick/Programming/vue-todo/rethinkdb_data/05dfe5cb-5255-43a4-ba39-e463b3a81f2c
+2016-07-23T09:36:27.948022730 2025.068522s info: Table 05dfe5cb-5255-43a4-ba39-e463b3a81f2c: Deleted the table.
+2016-07-23T09:36:28.278811460 2025.399311s notice: Removing file /home/patrick/Programming/vue-todo/rethinkdb_data/dc539bce-d49a-4f0d-b976-44088bd67fb3
+2016-07-23T09:36:28.278823077 2025.399322s info: Table dc539bce-d49a-4f0d-b976-44088bd67fb3: Deleted the table.
+2016-07-23T09:36:35.278800179 2032.399299s info: Table 5c868084-620a-4c1a-a9ab-640fe7405230: Starting a new Raft election for term 1.
+2016-07-23T09:36:35.278955620 2032.399455s info: Table 5c868084-620a-4c1a-a9ab-640fe7405230: Added replica on this server.
+2016-07-23T09:36:35.388098528 2032.508598s info: Table 5c868084-620a-4c1a-a9ab-640fe7405230: This server is Raft leader for term 1. Latest log index is 0.

@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
 //REST API FOR TASKS
 //GET - All Tasks
 router.get('/tasks', (req, res) => {
-  r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
+  r.table("tasks").run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log("Error:", err)
@@ -76,8 +76,7 @@ router.delete('/tasks/:id', (req, res) => {
   console.log(req.params.id)
   r.table("tasks").get(req.params.id).delete().run(function(err, result) {
         if (err) throw err;
-        console.log(result);
-        io.emit('taskDelete', result);
+        io.emit('taskDelete', req.params.id);
     }
   )
 })

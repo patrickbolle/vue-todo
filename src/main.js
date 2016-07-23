@@ -9,7 +9,10 @@ import Tasks from './components/Tasks'
 Vue.use(Router)
 Vue.use(Resource)
 
-const router = new Router()
+const router = new Router({
+  history: true,
+  hashbang: false
+})
 
 router.map({
   '/tasks': {
@@ -19,10 +22,6 @@ router.map({
   '/task/:id': {
     component: TaskView
   }
-})
-
-router.beforeEach(function () {
-  window.scrollTo(0, 0)
 })
 
 router.redirect({
