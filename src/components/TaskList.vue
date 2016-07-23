@@ -1,8 +1,7 @@
 <template lang="html" name="TaskList">
   <div>
-    <task-new></task-new>
     <div class="divider"></div>
-    <div v-for="task in tasks">
+    <div v-for="task in tasks" :task="task">
       <div class="card is-fullwidth">
         <header class="card-header">
           <p class="card-header-title">
@@ -13,51 +12,24 @@
           </a>
         </header>
       </div>
-    <br>
-    </li>
-  </div>
+      <br>
+      </li>
+    </div>
 </template>
 
 <script>
-import TaskNew from './TaskNew'
-var socket = io.connect('http://localhost:8099');
-
 export default {
-  components: {
-    TaskNew
-  },
-
-  data () {
-    return {
-      tasks: []
-    }
-  },
-
-  created () {
-    this.$http.get('http://localhost:8090/api/tasks').then(response => {
-       this.$set('tasks', response.data)
-    })
-  },
-
-  ready () {
-    var that = this
-    that.socketInsert()
-  },
+  name: 'TaskList',
+  props: ['tasks'],
 
   methods: {
+    /**
     delete (id) {
       this.$http.delete('http://localhost:8090/api/tasks/' + id).then(response => {
         this.$set('tasks', response.data)
       })
-    },
-    socketInsert () {
-      var that = this
-      socket.on('taskInsert', function(result){
-        //console.log(result)
-        that.tasks.push(result)
-      })
     }
-
+    **/
   }
 }
 </script>

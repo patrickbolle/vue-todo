@@ -11,7 +11,6 @@ const router = express.Router()
 const compiler = webpack(config)
 const jsonParser = bodyParser.json()
 
-
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 
@@ -34,7 +33,6 @@ console.log("Server started on port " + 8099);
 // Set socket.io listeners.
 io.on('connection', (socket) => {
   console.log('a user connected');
-
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
@@ -59,7 +57,6 @@ router.post('/tasks', jsonParser, (req, res) => {
   r.table('tasks').insert(task).run().then(result => {
     res.send(result)
     io.emit('taskInsert', result);
-    console.log(res)
   }).catch(err => {
     console.log('Error:', err)
   })

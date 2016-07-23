@@ -3,9 +3,8 @@ import Router from 'vue-router'
 import Resource from 'vue-resource'
 import App from './App'
 // Import components
-import TaskNew from './components/TaskNew'
-import TaskList from './components/TaskList'
 import TaskView from './components/TaskView'
+import Tasks from './components/Tasks'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -13,12 +12,8 @@ Vue.use(Resource)
 const router = new Router()
 
 router.map({
-  '/task/new': {
-    component: TaskNew
-  },
-
   '/tasks': {
-    component: TaskList
+    component: Tasks
   },
 
   '/task/:id': {

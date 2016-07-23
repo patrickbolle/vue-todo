@@ -28,9 +28,7 @@ export default {
         this.$http.post('http://localhost:8090/api/tasks', {
           title: this.title
         }).then(response => {
-          this.$http.get('http://localhost:8090/api/tasks').then(response => {
-            this.tasks = response.data
-          })
+          console.log(response)
         })
         this.title = ''
       } else {
