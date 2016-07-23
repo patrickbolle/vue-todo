@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
 //REST API FOR TASKS
 //GET - All Tasks
 router.get('/tasks', (req, res) => {
-  r.table("tasks").run().then(result => {
+  r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log("Error:", err)
