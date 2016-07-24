@@ -4,7 +4,7 @@
     <div v-for="task in tasks" :task="task" transition="expand">
       <div class="card is-fullwidth">
         <header class="card-header">
-          <p class="card-header-title">
+          <p class="card-header-title" v-on:click="doSomething">
             {{ task.title }}
           </p>
           <a v-on:click="remove(task.id)" class="card-header-icon">

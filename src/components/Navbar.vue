@@ -16,11 +16,11 @@
       <a class="nav-item" href="#">
         Home
       </a>
-      <a class="nav-item" href="#">
-        View Tasks
+      <a class="nav-item" href="https://github.com/patrickbolle/vue-todo">
+        Github
       </a>
-      <a class="nav-item" href="#">
-        Blog
+      <a class="nav-item" href="http://patrickbollenbach.com">
+        Created by Patrick Bollenbach
       </a>
     </div>
   </nav>

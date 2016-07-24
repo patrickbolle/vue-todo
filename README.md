@@ -1,6 +1,7 @@
 # vue-todo
 
-> A Vue.js project
+> A Vue.js CRUD project/tutorial for building a to do list.
+> Built with Vue, Socket.io, Express, and RethinkDB
 
 ## Build Setup
 
@@ -8,20 +9,12 @@
 # install dependencies
 npm install
 
+# run rethinkdb
+rethinkdb
+
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
