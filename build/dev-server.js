@@ -63,8 +63,9 @@ router.post('/tasks', jsonParser, (req, res) => {
 })
 
 //PUT - Update A Task
-router.put('/tasks/:id', (req, res) => {
+router.put('/tasks/:id', jsonParser, (req, res) => {
   var newTitle = req.body.title
+  console.log(newTitle)
   r.table("tasks").get(req.params.id).update({title: newTitle}).run().then(result => {
     res.send(result)
     io.emit('taskUpdate', result);

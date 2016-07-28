@@ -45,4 +45,10 @@ html {
   padding: 0 10px;
   opacity: 0;
 }
+
+.taskInput {
+  height: 31px !important;
+  border: 1px solid rgba(211, 214, 219, 0) !important;
+  box-shadow: none !important;
+}
 </style>
