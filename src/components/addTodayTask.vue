@@ -1,12 +1,11 @@
-<template lang="html">
+<template lang="html" name="addTodayTask">
   <div class="has-text-centered">
     <form>
       <!-- form input control -->
-      <h4 class="title is-4">Insert A Task <small></small></h4>
       <p class="control">
-        <input class="input" v-model="title" type="text" placeholder="Task Name">
+        <input class="input addTask" v-model="title" type="text" placeholder="Today">
       </p>
-      <button class="button is-primary" v-on:click="submit">Submit</button>
+      <button class="button is-primary" v-on:click="submit" style="display:none">Submit</button>
     </form>
     <br>
   </div>
@@ -14,7 +13,7 @@
 
 <script>
 export default {
-  name: 'TaskNew',
+  name: 'addTodayTask',
 
   data () {
     return {
@@ -25,7 +24,7 @@ export default {
   methods: {
     submit () {
       if (this.title !== '') {
-        this.$http.post('http://localhost:8090/api/tasks', {
+        this.$http.post('http://localhost:8090/api/todayTasks', {
           title: this.title
         }).then(response => {
           console.log(response)
