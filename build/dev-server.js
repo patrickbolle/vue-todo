@@ -40,16 +40,8 @@ io.on('connection', (socket) => {
 
 //REST API FOR TASKS
 //GET - All Tasks
-router.get('/todayTasks', (req, res) => {
-  r.table("todayTasks").orderBy(r.desc('createdAt')).run().then(result => {
-    res.send(result)
-  }).catch(err => {
-    console.log("Error:", err)
-  })
-})
-
-router.get('/tomorrowTasks', (req, res) => {
-  r.table("tomorrowTasks").orderBy(r.desc('createdAt')).run().then(result => {
+router.get('/tasks', (req, res) => {
+  r.table("tasks").orderBy(r.desc('createdAt')).run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log("Error:", err)
@@ -57,32 +49,18 @@ router.get('/tomorrowTasks', (req, res) => {
 })
 
 //POST - Create A New Task
-router.post('/todayTasks', jsonParser, (req, res) => {
-  const todayTask = {
+router.post('/tasks', jsonParser, (req, res) => {
+  const task = {
     'title': req.body.title,
     'createdAt': new Date().toJSON()
   }
-  r.table('todayTasks').insert(todayTask).run().then(result => {
+  r.table('tasks').insert(task).run().then(result => {
     res.send(result)
     io.emit('taskInsert', result);
   }).catch(err => {
     console.log('Error:', err)
   })
 })
-
-router.post('/tomorrowTasks', jsonParser, (req, res) => {
-  const tomorrowTask = {
-    'title': req.body.title,
-    'createdAt': new Date().toJSON()
-  }
-  r.table('tomorrowTasks').insert(tomorrowTask).run().then(result => {
-    res.send(result)
-    io.emit('taskInsert', result);
-  }).catch(err => {
-    console.log('Error:', err)
-  })
-})
-
 
 //PUT - Update A Task
 router.put('/tasks/:id', jsonParser, (req, res) => {

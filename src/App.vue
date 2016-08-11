@@ -21,23 +21,9 @@ export default {
 @import "../node_modules/bulma/css/bulma.css";
 
 html {
-  background-color: rgb(237, 99, 99);
+  background: url(./assets/congruent_pentagon.png) ;
 }
 
-p, h1, h2, h3, h4, h5, h6, input {
-  font-family: 'Open Sans', sans-serif !important;
-}
-
-p {
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700 !important;
-}
-input {
-  font-weight: 700 !important;
-}
 .container {
   padding-top: 25px;
   width: 60%;
@@ -64,38 +50,5 @@ input {
   height: 31px !important;
   border: 1px solid rgba(211, 214, 219, 0) !important;
   box-shadow: none !important;
-}
-
-.input, .textarea, .addTask {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #f4f4f4;
-    border-radius: none !important;
-    color: #222324;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    font-size: 42px;
-    letter-spacing: 0px;
-    height: 71px;
-    justify-content: flex-start;
-    line-height: 77px;
-    padding-left: 8px;
-    padding-right: 8px;
-    position: relative;
-    vertical-align: top;
-    max-width: 100%;
-    width: 100%;
-}
-
-.navContent {
-  width: 100% !important;
-  margin: 0px auto;
 }
 </style>

@@ -1,29 +1,14 @@
 <template lang="html" name="Tasks">
   <div>
-    <div class="columns">
-      <div class="column">
-        <add-today-task></add-today-task>
-      </div>
-      <div class="column">
-        <add-tomorrow-task></add-tomorrow-task>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column">
-        <task-list :tasks="todayTasks"></task-list>
-      </div>
-      <div class="column">
-        <task-list :tasks="tomorrowTasks"></task-list>
-      </div>
-    </div>
+    <task-new></task-new>
+    <hr>
+    <task-list :tasks="tasks"></task-list>
   </div>
 </template>
 
 <script>
-import addTodayTask from './addTodayTask'
-import addTomorrowTask from './addTomorrowTask'
+import TaskNew from './TaskNew'
 import TaskList from './TaskList'
-
 const _ = require('lodash')
 var socket = io.connect('http://localhost:8099');
 
@@ -31,32 +16,27 @@ export default {
   name: 'Tasks',
   data: function () {
     return {
-      todayTasks: [],
-      tomorrowTasks: []
+      tasks: []
     }
   },
   created () {
   },
   ready () {
-    this.$http.get('http://localhost:8090/api/todayTasks').then(response => {
-       this.$set('todayTasks', response.data)
-    })
-    this.$http.get('http://localhost:8090/api/tomorrowTasks').then(response => {
-       this.$set('tomorrowTasks', response.data)
+    this.$http.get('http://localhost:8090/api/tasks').then(response => {
+       this.$set('tasks', response.data)
     })
     var that = this
     socket.on('taskInsert', function(result){
-      that.todayTasks.push(result)
+      that.tasks.push(result)
     })
     var that = this
     socket.on('taskDelete', function(id){
-      that.todayTasks = _.reject(that.todayTasks, {id: id})
+      that.tasks = _.reject(that.tasks, {id: id})
     })
   },
   methods: {},
   components: {
-    addTodayTask,
-    addTomorrowTask,
+    TaskNew,
     TaskList
   }
 }
