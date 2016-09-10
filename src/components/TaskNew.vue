@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="has-text-centered">
     <form>
-      <!-- form input control -->
       <h4 class="title is-4">Insert A Task <small></small></h4>
       <p class="control">
         <input class="input" v-model="title" type="text" placeholder="Task Name">
