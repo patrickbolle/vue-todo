@@ -1,7 +1,12 @@
 # vue-todo
 
-> A Vue.js CRUD project/tutorial for building a to do list.
-> Built with Vue, Socket.io, Express, and RethinkDB
+This is a VueJS project that connects with RethinkDB with Socket.io
+I'm still learning this stuff so let me know if anything is wrong.
+
+Currently working on removing Bulma, adding user authentication and cleaning up the current code.
+
+Also working on a tutorial for this on my site : <a href="http://patrickbollenbach.com/blog">www.patrickbollenbach.com</a>
+
 
 ## Build Setup
 
